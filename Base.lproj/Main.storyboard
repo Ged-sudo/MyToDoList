@@ -3,7 +3,6 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,33 +17,36 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="LVc-Tc-Ivw">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="110"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8gx-7I-Lfx">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
-                                        <color key="backgroundColor" red="0.5351622157" green="1" blue="0.53278568479999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.36164282974412459" green="0.5" blue="0.34982104760211308" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="9Yk-GB-CBZ"/>
+                                            <constraint firstAttribute="height" constant="50" id="Tb2-lz-kBv"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <color key="textColor" red="0.99231373009115487" green="0.46695543992386879" blue="1" alpha="0.89803921568627454" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="15" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="ZhU-pm-dOb">
-                                        <rect key="frame" x="0.0" y="50" width="414" height="675"/>
-                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="22"/>
-                                        <nil key="textColor"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" semanticContentAttribute="forceLeftToRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" minimumFontSize="40" preferredMaxLayoutWidth="400" translatesAutoresizingMaskIntoConstraints="NO" id="ZhU-pm-dOb">
+                                        <rect key="frame" x="0.0" y="50" width="414" height="60"/>
+                                        <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="ShD-ll-HBI"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="26"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xCq-db-MPc"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="xCq-db-MPc" firstAttribute="trailing" secondItem="LVc-Tc-Ivw" secondAttribute="trailing" id="7lg-qw-QZL"/>
                             <constraint firstItem="LVc-Tc-Ivw" firstAttribute="top" secondItem="xCq-db-MPc" secondAttribute="top" id="Bwn-e0-1ND"/>
-                            <constraint firstItem="xCq-db-MPc" firstAttribute="bottom" secondItem="LVc-Tc-Ivw" secondAttribute="bottom" id="SrH-AZ-BMb"/>
                             <constraint firstItem="LVc-Tc-Ivw" firstAttribute="leading" secondItem="xCq-db-MPc" secondAttribute="leading" id="dIf-tY-fBp"/>
                         </constraints>
                     </view>
@@ -83,35 +85,37 @@
                                     </button>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="1O9-b9-jUE">
                                         <rect key="frame" x="0.0" y="247" width="414" height="478"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="titleDoCell" id="Kag-IY-jgN" customClass="CellDescription" customModule="ToDoList" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                                <rect key="frame" x="0.0" y="44.5" width="414" height="49.5"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Kag-IY-jgN" id="2xR-ZI-fmd" customClass="CellDescription" customModule="ToDoList" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="49.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aMr-JX-rRg">
-                                                            <rect key="frame" x="207" y="2" width="0.0" height="40"/>
+                                                            <rect key="frame" x="20" y="2" width="335" height="45.5"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="40" id="p1e-7k-Hbo"/>
+                                                                <constraint firstAttribute="height" constant="45" id="Pey-GG-aKO"/>
+                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="350" id="uvl-pz-wBe"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstItem="aMr-JX-rRg" firstAttribute="centerY" secondItem="2xR-ZI-fmd" secondAttribute="centerY" id="CBm-6q-2eW"/>
-                                                        <constraint firstItem="aMr-JX-rRg" firstAttribute="centerX" secondItem="2xR-ZI-fmd" secondAttribute="centerX" id="Gaa-38-0Pj"/>
-                                                        <constraint firstItem="aMr-JX-rRg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="2xR-ZI-fmd" secondAttribute="leadingMargin" id="Z9d-HL-oL3"/>
-                                                        <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="aMr-JX-rRg" secondAttribute="trailing" id="ksZ-Sd-Ve2"/>
+                                                        <constraint firstItem="aMr-JX-rRg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="2xR-ZI-fmd" secondAttribute="leading" constant="20" symbolic="YES" id="G0R-5a-x8X"/>
+                                                        <constraint firstItem="aMr-JX-rRg" firstAttribute="top" secondItem="2xR-ZI-fmd" secondAttribute="top" constant="2" id="ecM-dd-0Af"/>
+                                                        <constraint firstAttribute="trailing" secondItem="aMr-JX-rRg" secondAttribute="trailing" constant="59" id="iaU-cC-Fn0"/>
+                                                        <constraint firstAttribute="bottom" secondItem="aMr-JX-rRg" secondAttribute="bottom" constant="2" id="ihY-ep-EU6"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <connections>
                                                     <outlet property="titleOfDoFromRealm" destination="aMr-JX-rRg" id="AoS-t7-HQB"/>
-                                                    <segue destination="u2M-lW-IQR" kind="show" identifier="descriptionOfDo" id="7fe-Fb-fKS"/>
+                                                    <segue destination="u2M-lW-IQR" kind="show" identifier="descriptionOfDo" id="0Xe-1i-pm7"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
@@ -120,7 +124,7 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="kOZ-ie-C1w" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Boe-BN-x83"/>
                             <constraint firstItem="kOZ-ie-C1w" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Ghy-sf-GKN"/>
@@ -179,10 +183,10 @@
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="XbM-rv-L1f"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Save">
+                                        <buttonConfiguration key="configuration" style="plain" title="Сохранить дело">
                                             <backgroundConfiguration key="background" cornerRadius="50">
-                                                <color key="backgroundColor" systemColor="tintColor"/>
-                                                <color key="strokeColor" name="AccentColor"/>
+                                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="strokeColor" red="0.35331338649999999" green="0.35331338649999999" blue="0.35331338649999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             </backgroundConfiguration>
                                             <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
                                             <color key="baseForegroundColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
@@ -193,43 +197,31 @@
                                             <action selector="saveData:" destination="zft-qz-4rA" eventType="touchUpInside" id="fsG-pH-fiN"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" minimumFontSize="40" translatesAutoresizingMaskIntoConstraints="NO" id="ttv-D5-BO0">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Заголовок" textAlignment="center" minimumFontSize="40" translatesAutoresizingMaskIntoConstraints="NO" id="ttv-D5-BO0">
                                         <rect key="frame" x="0.0" y="100" width="414" height="75"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="75" id="n9W-KR-11T"/>
                                         </constraints>
-                                        <attributedString key="attributedText">
-                                            <fragment content="Title">
-                                                <attributes>
-                                                    <font key="NSFont" metaFont="system" size="25"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="25"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
                                             <action selector="titleOfDo:" destination="8NE-qg-R0c" eventType="editingDidEnd" id="Y1d-O8-nYh"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" usesAttributedText="YES" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="omV-Y5-tWh">
+                                    <textField opaque="NO" contentMode="TopLeft" contentHorizontalAlignment="leading" contentVerticalAlignment="top" borderStyle="roundedRect" placeholder="Описание дела" textAlignment="justified" minimumFontSize="40" translatesAutoresizingMaskIntoConstraints="NO" id="omV-Y5-tWh">
                                         <rect key="frame" x="0.0" y="175" width="414" height="550"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <attributedString key="attributedText">
-                                            <fragment content="Description of Do">
-                                                <attributes>
-                                                    <font key="NSFont" metaFont="system" size="20"/>
-                                                    <font key="NSOriginalFont" metaFont="system" size="25"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" enablesReturnKeyAutomatically="YES"/>
                                         <connections>
                                             <action selector="descriptionOfDo:" destination="8NE-qg-R0c" eventType="editingDidEnd" id="Aqu-XR-nKQ"/>
                                         </connections>
                                     </textField>
                                 </subviews>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <constraints>
                                     <constraint firstItem="bYw-qP-oV9" firstAttribute="centerX" secondItem="YC2-lR-7in" secondAttribute="centerX" id="LuD-gF-Dpc"/>
                                 </constraints>
@@ -277,20 +269,14 @@
     <resources>
         <image name="arrow.clockwise" catalog="system" width="115" height="128"/>
         <image name="plus" catalog="system" width="128" height="113"/>
-        <namedColor name="AccentColor">
-            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGroupedBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tertiarySystemGroupedBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="tintColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

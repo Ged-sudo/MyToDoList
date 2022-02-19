@@ -6,14 +6,14 @@
 //
 
 import UIKit
-
+import RealmSwift
 
 class DescriptionController: UIViewController {
 
-    var titlesArray: Array<String> = []
-    var descriptionArray: Array<String> = []
-    var titleFromImport : String = ""
-    var descriptionOfDoFromImport : String = ""
+   
+    
+
+  
     var indexOfSomeDo: Int = 0
     
     @IBOutlet weak var descriptionOfImportDo: UILabel!
@@ -22,10 +22,14 @@ class DescriptionController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        titleOfImportDo.text = titleFromImport
-        descriptionOfImportDo.text = descriptionOfDoFromImport
+        let realm = try! Realm()
+        let exemplarOfDo = realm.object(ofType: UserData.self, forPrimaryKey: indexOfSomeDo)
         
-        //descriptionOfImportDo.text = desc
+        print(indexOfSomeDo)
+        titleOfImportDo.text = exemplarOfDo?.titleOfDo
+        descriptionOfImportDo.text = exemplarOfDo?.descriptionOfDo
+        
+      
     }
     
     

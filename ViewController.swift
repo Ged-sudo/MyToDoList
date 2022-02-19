@@ -1,10 +1,3 @@
-//
-//  ViewController.swift
-//  ToDoList
-//
-//  Created by Евгений Андронов on 31.01.2022.
-//
-
 import UIKit
 import RealmSwift
 
@@ -13,66 +6,50 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var timeFromDo: UIDatePicker!
     @IBOutlet weak var todoTableView: UITableView!
     
-    var timenow: Double = 1644397200.0
-    
+    var timenow: Double = 1643716380.0
+
     var titlesArr: Array <String> = []
-    var descriptionsArr: Array <String> = []
+    var indexArray: Array <Int> = []
     var indexOfDo: Int = 0
     
     let realm = try! Realm()
     
-    //---------------------------------------------
     @IBAction func refrashButton(_ sender: Any ){
-        DispatchQueue.main.async { [self] in
+        for _ in 1 ... 2{
             TitleReturn()
-            self.timenow = TimeReset()
+            timenow = TimeReset()
             self.todoTableView.reloadData()
+            print(Realm.Configuration.defaultConfiguration.fileURL!)
         }
     }
     
-    //---------------------------------------------
+
     func TimeReset() -> Double{
-        timenow = Double(self.timeFromDo?.date.timeIntervalSince1970 ?? 1644397200.0)
+        timenow = Double(self.timeFromDo?.date.timeIntervalSince1970 ?? timenow)
         return timenow
     }
     
-    //---------------------------------------------
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
         todoTableView.delegate = self
         todoTableView.dataSource = self
         
     }
-
-    //---------------------------------------------
-    
+  
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-      
-      
-        return self.titlesArr.count
+        return titlesArr.count
     }
     
-    //---------------------------------------------
-    
-    var titleName = ""
-    var descNew = ""
-    
-    func enterTitleName(st : String, descriptionofdo: String){
-        titleName = st
-        descNew = descriptionofdo
-        
-    }
-    
-    //---------------------------------------------
     
     func TitleReturn(){
        
         let cell = todoTableView.dequeueReusableCell(withIdentifier: "titleDoCell") as! CellDescription
         cell.titleOfDoFromRealm.text = ""
-        print(timenow)
         
         titlesArr.removeAll()
-        descriptionsArr.removeAll()
+        indexArray.removeAll()
+      
         
         for i in realm.objects(UserData.self).indices{
             
@@ -81,16 +58,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             let timeOfDoStart = Double(takeDo?.timeStart ?? 0)
             let timeOfDoFinish = Double(takeDo?.timeFinish ?? 0)
          
-            if (timeOfDoStart <= timenow) {
-                if (timeOfDoFinish >= timenow){
-                    let title = String(takeDo?.titleOfDo ?? "")
-                    let description = String(takeDo?.descriptionOfDo ?? "")
-                    
-                    titlesArr.append(title)
-                    descriptionsArr.append(description)
-                  
-                    
-                }
+            if (timeOfDoStart <= timenow) && (timeOfDoFinish >= timenow) {
+                let title = String(takeDo?.titleOfDo ?? "")
+                let indexOfDoFromRealm = Int(takeDo?.id ?? 0) 
+                   
+                indexArray.append(indexOfDoFromRealm)
+                titlesArr.append(title)
+                
             }
         }
     }
@@ -103,25 +77,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
     }
     
-    //---------------------------------------------
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        guard segue.identifier == "descriptionOfDo" else { return }
-        guard let destination = segue.destination as? DescriptionController else { return }
-            
-        destination.titlesArray = titlesArr
-        destination.descriptionArray = descriptionsArr
-        destination.indexOfSomeDo = indexOfDo
+           guard segue.identifier == "descriptionOfDo" else {return}
+           guard let destination = segue.destination as? DescriptionController else { return }
         
+        let titleCellSelected = todoTableView.indexPathForSelectedRow!.row
+        destination.indexOfSomeDo = indexArray[titleCellSelected]
+               
     }
-    
-    
 }
+
 

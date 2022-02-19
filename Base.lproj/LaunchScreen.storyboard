@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -17,26 +16,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="59119fc6788f8" translatesAutoresizingMaskIntoConstraints="NO" id="wbu-B6-qpJ">
-                                <rect key="frame" x="-145" y="-52" width="704" height="1000"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XG8-MM-knu">
-                                <rect key="frame" x="88" y="574" width="238" height="88"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
-                                <color key="textColor" red="0.5351622156542184" green="1" blue="0.53278568477564092" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nUF-ZV-Akj">
+                                <rect key="frame" x="145" y="428" width="124" height="40"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Привет!">
+                                        <attributes>
+                                            <font key="NSFont" size="36" name=".SFNS-Regular"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <nil key="highlightedColor"/>
-                                <color key="shadowColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <size key="shadowOffset" width="13" height="16"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XG8-MM-knu" secondAttribute="trailing" constant="88" id="CkV-AJ-2F0"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="XG8-MM-knu" secondAttribute="bottom" constant="200" id="FZV-VH-5Ba"/>
-                            <constraint firstItem="XG8-MM-knu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="88" id="XVt-iQ-qxn"/>
-                            <constraint firstItem="wbu-B6-qpJ" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="eKT-ct-Rmv"/>
-                            <constraint firstItem="wbu-B6-qpJ" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="rPS-uN-Hj7"/>
+                            <constraint firstItem="nUF-ZV-Akj" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="8hl-8y-Ibk"/>
+                            <constraint firstItem="nUF-ZV-Akj" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="D8h-en-t4y"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -46,7 +42,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="59119fc6788f8" width="704" height="1000"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
